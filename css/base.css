@@ -1,0 +1,15 @@
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; text-align: left; margin: 50px; padding: 0; }
+
+div#listing { margin-top: 45px; }
+
+div.host { height: 50px; width: 700px; margin-bottom: 20px; }
+div.host div.lamp { width: 10px; }
+div.host div.name { width: 230px; }
+div.host div.icmp { width: 70px; }
+
+div.lamp, div.name, div.icmp, div.socket { float: left; height: 100%; }
+div.name, div.icmp, div.socket { margin-left: 10px; }
+
+div.green { background-color: #3f6; }
+div.orange { background-color: #f93; }
+div.red { background-color: #f33; }
