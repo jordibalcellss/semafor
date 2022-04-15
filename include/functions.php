@@ -22,10 +22,10 @@ function ping($address) {
 	}
 }
 
-function socket($address,$port) {
+function socket($prefix,$address,$port) {
 	//returns -1 on failure, 3-way handshake time (ms) on success
 	$starttime = microtime(true);
-	$file = @fsockopen($address,$port,$errno,$errstr,1);
+	$file = @fsockopen($prefix.$address,$port,$errno,$errstr,1);
 	$stoptime = microtime(true);
 	
 	if (!$file) {

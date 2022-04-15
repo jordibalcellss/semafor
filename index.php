@@ -1,13 +1,13 @@
 <?php
 
-require_once 'config.php';
-require_once 'locale/'.LOCALE.'.php';
+require 'config.php';
+require 'locale/'.LOCALE.'.php';
 ini_set('error_reporting',ERROR_REPORTING);
 ini_set('display_errors',DISPLAY_ERRORS);
 
-require_once 'hosts.php';
-require_once 'include/functions.php';
-include 'include/template/head.php';
+require 'hosts.php';
+require 'include/functions.php';
+require 'include/template/head.php';
 ?>
 			<h1><?=TITLE?></h1>
 			<p><?=checks_network_status?></p>
@@ -16,8 +16,24 @@ include 'include/template/head.php';
 foreach ($hosts as $host) {
 	//if the host is an IP already then skip resolving
 	if (!filter_var($host['name'],FILTER_VALIDATE_IP)) {
+		//validated as an hostname
+		if (substr($host['name'],0,6) == 'udp://') {
+			//remove the prefix
+			$host['name'] = substr($host['name'],6,strlen($host['name']));
+			$prefix = 'udp://';
+		}
+		else {
+			$prefix = '';
+		}
 		$address = resolve($host['name']);
-		$id = $host['name'].'<br />'.$address;
+		if ($address) {
+			//resolved
+			$id = $host['name'].'<br />'.$address;
+		}
+		else {
+			//unresolved, ignore
+			continue;
+		}
 	}
 	else {
 		$address = $host['name'];
@@ -36,7 +52,7 @@ foreach ($hosts as $host) {
 		 * because in some (not so) exotic cases it is filtered out
 		 * in purpose
 		 */
-		$lapse = socket($address,$host['port']).'ms';
+		$lapse = socket($prefix,$address,$host['port']).'ms';
 		if ($lapse != -1) {
 			$socket_class = ' green';
 		}
@@ -73,6 +89,6 @@ foreach ($hosts as $host) {
 }
 echo "			</div>\n";
 
-include 'include/template/base.php';
+require 'include/template/base.php';
 
 ?>

@@ -2,9 +2,10 @@
 
 $hosts = [
 	['name' => 'example.com', 'port' => 80, 'description' => 'random web server'],
-	['name' => 'serveis.guifi.net', 'port' => 53, 'description' => 'DNS forwarder'],
-	['name' => '1.0.0.1', 'port' => 53, 'description' => 'yet another nameserver'],
-	['name' => '10.12.0.101', 'port' => 3389, 'description' => 'a local machine'],
+	['name' => 'serveis.guifi.net', 'port' => 53, 'description' => 'a nameserver'],
+	['name' => 'udp://0.be.pool.ntp.org', 'port' => 123, 'description' => 'a time server'],
+	['name' => 'example.com', 'port' => 8080, 'description' => 'filtered port'],
+	['name' => '1.2.3.4', 'port' => 21, 'description' => 'random address'],
 ];
 
 ?>
