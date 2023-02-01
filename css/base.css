@@ -1,4 +1,6 @@
-body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; text-align: left; margin: 50px; padding: 0; }
+* { margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; text-align: left; margin-left: 50px; }
 
 div#listing { margin-top: 45px; }
 
@@ -13,3 +15,9 @@ div.name, div.icmp, div.socket { margin-left: 10px; }
 div.green { background-color: #3f6; }
 div.orange { background-color: #f93; }
 div.red { background-color: #f33; }
+
+h1 { padding: 50px 0 18px; }
+
+div#trunk { min-height: 100%; height: auto !important; height: 100%; margin-bottom: -37px; }
+div#base, .push { height: 37px; }
+.push { padding-top: 60px; }

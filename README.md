@@ -1,10 +1,10 @@
 # semafor
 
-semafor is a network status monitor written in PHP.
+A network status monitor written in PHP.
 
 ## Description
 
-The web frontend shows the status of a series of hosts. It allows testing separately ICMP echo and specific ports.
+The web frontend shows the status of a series of hosts. It allows testing ICMP echo and specific ports simultaneously.
 
 ## Configuration
 

@@ -4,12 +4,10 @@
     <link rel="stylesheet" href="css/base.css" media="screen,print" type="text/css" />
     <link rel="stylesheet" href="css/<?=MODE?>.css" media="screen,print" type="text/css" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <title><?=TITLE?></title>
   </head>
   <body>
-    <div id="session">
-      <span><?=greeting?>, <?=$_SESSION['id']?>! - <a href="login.php?action=logout"><?=logout?></a></span>
-    </div>
     <div id="trunk">
