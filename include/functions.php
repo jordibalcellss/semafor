@@ -11,9 +11,10 @@ function resolve($hostname) {
   }
 }
 
-function ping($address) {
+function ping($address,$timeout) {
   //returns true on success (echo reply received)
-  $status_code = shell_exec("ping -q -c1 $address >/dev/null; echo $?");
+  $status_code =
+    shell_exec("timeout $timeout ping -q -c1 $address >/dev/null; echo $?");
   if ($status_code == 0) {
     return true;
   }

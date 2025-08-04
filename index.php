@@ -58,7 +58,7 @@ foreach ($hosts as $host) {
   }
   if ($address !== false) {
     //ICMP
-    if (ping($address)) {
+    if (ping($address,PING_TIMEOUT)) {
       $icmp_class = ' green';
     }
     else {

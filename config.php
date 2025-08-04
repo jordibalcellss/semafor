@@ -4,6 +4,7 @@
 define('TITLE','semafor');
 define('LOCALE','en');
 define('MODE','dark');
+define('PING_TIMEOUT',2);
 
 //PHP
 define('DISPLAY_ERRORS',true);
